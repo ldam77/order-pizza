@@ -25,9 +25,10 @@ var delivery = false;
 
 // user interface logic
 $(document).ready(function(){
-  $('#add-address').click(function(){
+  $('#add-delivery-address').click(function(){
+    $('#add-delivery-address').off('click'); // Turn off click event listener so button only work once
     delivery = true;
-    $('#delivery-address').append('<div class="remove-list">' +
+    $('#delivery-address').append('<div class="add-address">' +
                                    '<div class="form-group">' +
                                      '<label for="street-address">Street Address</label><br>' +
                                      '<input type="text" id="street-address">' +
@@ -81,7 +82,7 @@ $(document).ready(function(){
     $('.total-area').show();
     $('.order-list-area').show();
     $('.customer-info').hide();
-    $('div.remove-list').remove();
+    $('div.add-address').hide();
   });
 
 });

@@ -1,6 +1,7 @@
 .pizza-order:hover {
   cursor: pointer;
-  color: blue;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .order-list-area {
@@ -20,4 +21,14 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 5em;
+  color: #f7f7d7;
+}
+
+input {
+  color: black;
+}
+
+#total-cost {
+  font-weight: bold;
 }
