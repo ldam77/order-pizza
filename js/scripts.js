@@ -21,6 +21,27 @@ var totalCost = 0;
 
 // user interface logic
 $(document).ready(function(){
+  $('#add-address').click(function(){
+    $('#delivery-address').append('<div class="remove-list">' +
+                                   '<div class="form-group">' +
+                                     '<label for="street-address">Street Address</label>' +
+                                     '<input type="text" class="form-control" id="street-address">' +
+                                   '</div>' +
+                                   '<div class="form-group">' +
+                                     '<label for="city">City</label>' +
+                                     '<input type="text" class="form-control" id="city">' +
+                                   '</div>' +
+                                   '<div class="form-group">' +
+                                     '<label for="state">State</label>' +
+                                     '<input type="text" class="form-control" id="state">' +
+                                   '</div>' +
+                                   '<div class="form-group">' +
+                                     '<label for="zip-code">Zip Code</label>' +
+                                     '<input type="text" class="form-control" id="zip-code">' +
+                                   '</div>' +
+                                 '</div>');
+  });
+
   $('#customize-pizza-form').submit(function(event){
     event.preventDefault();
     var size = $('input:radio[name=pizza-size]:checked').val();
@@ -28,6 +49,7 @@ $(document).ready(function(){
     $('input:checkbox[name=toppings]:checked').each(function(){
         toppings.push($(this).val());
     });
+
     var newPizza = new Pizza(size, toppings);
     newPizza.calculateCost();
     totalCost += newPizza.price;
@@ -44,6 +66,7 @@ $(document).ready(function(){
     $('#total-cost').text(totalCost);
     $('#customize-pizza-form').trigger('reset');
     $('.order-list-area').show();
+    $('div.remove-list').remove();
   });
 
 });
