@@ -17,6 +17,7 @@ debugger;
   this.price = this.price + this.toppings.length;
 };
 
+var totalCost = 0;
 
 // user interface logic
 $(document).ready(function(){
@@ -29,8 +30,9 @@ $(document).ready(function(){
     });
     var newPizza = new Pizza(size, toppings);
     newPizza.calculateCost();
+    totalCost += newPizza.price;
 
-    $('#order-list').append('<li><span class="pizza-order">' + newPizza.size + '</span></li>');
+    $('#order-list').append('<li><span class="pizza-order">' + newPizza.size + ' - $' + newPizza.price + '</span></li>');
     $('.pizza-order').last().click(function(){
       $('.pizza-toppings-area h3').text(newPizza.size);
       $('#pizza-toppings-list').text('');
@@ -39,7 +41,7 @@ $(document).ready(function(){
       });
     });
 
-    $('#total-cost').text(newPizza.price);
+    $('#total-cost').text(totalCost);
     $('#customize-pizza-form').trigger('reset');
     $('.order-list-area').show();
   });
