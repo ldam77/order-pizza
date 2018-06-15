@@ -32,3 +32,8 @@ input {
 #total-cost {
   font-weight: bold;
 }
+
+.remove:hover {
+  cursor: pointer;
+  background-color: red;
+}

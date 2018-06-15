@@ -31,6 +31,7 @@ ldam77@yahoo.com
 * Allow users to order more than one pizza with different toppings
 * Display the list of pizzas ordered as links that can be clicked on for details
 * Offer a delivery option that then requires address information
+* Allow user to remove pizza ordered
 
 
 

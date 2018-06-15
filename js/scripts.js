@@ -9,7 +9,6 @@ function Pizza(name, phone, address, size, toppings){
 }
 
 Pizza.prototype.calculateCost = function () {
-debugger;
   if(this.size === 'Small'){
     this.price = 12;
   } else if(this.size === 'Medium'){
@@ -66,13 +65,20 @@ $(document).ready(function(){
     newPizza.calculateCost();
     totalCost += newPizza.price;
 
-    $('#order-list').append('<li><span class="pizza-order">' + newPizza.size + ' - $' + newPizza.price + '</span></li>');
+    $('#order-list').append('<li><span class="pizza-order">' + newPizza.size + ' - $' + newPizza.price + '</span><span class="remove"> -Remove-</span></li>');
     $('.pizza-order').last().click(function(){
       $('.pizza-toppings-area h3').text(newPizza.size);
       $('#pizza-toppings-list').text('');
       newPizza.toppings.forEach(function(topping){
         $('#pizza-toppings-list').append('<li>' + topping + '</li>');
       });
+    });
+    $('.remove').last().click(function(){
+      $('.pizza-toppings-area h3').text('');
+      $('#pizza-toppings-list').text('');
+      totalCost -= newPizza.price;
+      $('#total-cost').text(totalCost);
+      $(this).parent().remove();
     });
 
     $('#name').text(newPizza.name);
