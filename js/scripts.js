@@ -18,3 +18,16 @@ Pizza.prototype.calculateCost = function () {
 
 
 // user interface logic
+$(document).ready(function(){
+  $('#customize-pizza-form').submit(function(event){
+    event.preventDefault();
+    var size = $('input:radio[name=pizza-size]:checked').val();
+    var toppings = [];
+    $('input:checkbox[name=toppings]:checked').each(function(){
+        toppings.push($(this).val());
+    });
+    var newPizza = new Pizza(size, toppings);
+    
+  });
+
+});
