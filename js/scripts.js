@@ -6,6 +6,7 @@ function Pizza(size, toppings){
 }
 
 Pizza.prototype.calculateCost = function () {
+debugger;
   if(this.size === 'small'){
     this.price = 12;
   } else if(this.size === 'medium'){
@@ -13,7 +14,7 @@ Pizza.prototype.calculateCost = function () {
   } else {
     this.price = 20;
   };
-  return this.price + toppings.length;
+  this.price = this.price + this.toppings.length;
 };
 
 
@@ -27,7 +28,10 @@ $(document).ready(function(){
         toppings.push($(this).val());
     });
     var newPizza = new Pizza(size, toppings);
-    
+    newPizza.calculateCost();
+
+    $('#total-cost').text(newPizza.price);
+    $('#customize-pizza-form').trigger('reset');
   });
 
 });
