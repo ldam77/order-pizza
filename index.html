@@ -11,24 +11,25 @@
   <body>
     <div class="container">
       <h1>Welcome to Piggglettts' Pizza</h1>
+
       <h2>Customize Your Pizza</h2>
       <form id="customize-pizza-form">
         <h3>Choose a size:</h3>
         <div class="radio">
           <label for="pizza-size">
-            <input type="radio" name="pizza-size" value="small">
+            <input type="radio" name="pizza-size" value="Small">
             Small (8") - $12
           </label>
         </div>
         <div class="radio">
           <label for="pizza-size">
-            <input type="radio" name="pizza-size" value="medium">
+            <input type="radio" name="pizza-size" value="Medium">
             Medium (12") - $16
           </label>
         </div>
         <div class="radio">
           <label for="pizza-size">
-            <input type="radio" name="pizza-size" value="large">
+            <input type="radio" name="pizza-size" value="Large">
             Large (16") - $20
           </label>
         </div>
@@ -51,9 +52,15 @@
 
       <div class="total-area">
         <h3>Your Total: $<span id="total-cost"></span></h3>
-
       </div>
-    </div>
 
+      <div class="order-list-area">
+        <h3>Your Orders:</h3>
+        <ul id="order-list">
+
+        </ul>
+      </div>
+
+    </div>
   </body>
 </html>

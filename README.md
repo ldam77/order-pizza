@@ -25,9 +25,12 @@ ldam77@yahoo.com
 
 ## Spec
 
-* Allows user to select a size from small, medium, and large
-* Allows user to select one or more from a list of toppings
+* Allow users to select a size from small, medium, and large
+* Allow users to select one or more from a list of toppings
 * Display the final cost of the pizza
+* Allow users to order more than one pizza with different toppings
+* Display the list of pizzas ordered as links that can be clicked on for details
+* Offer a delivery option that then requires address information
 
 
 

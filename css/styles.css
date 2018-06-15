@@ -1,0 +1,8 @@
+.pizza-order:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.order-list-area {
+  display: none;
+}
