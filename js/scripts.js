@@ -31,6 +31,13 @@ $(document).ready(function(){
     newPizza.calculateCost();
 
     $('#order-list').append('<li><span class="pizza-order">' + newPizza.size + '</span></li>');
+    $('.pizza-order').last().click(function(){
+      $('.pizza-toppings-area h3').text(newPizza.size);
+      $('#pizza-toppings-list').text('');
+      newPizza.toppings.forEach(function(topping){
+        $('#pizza-toppings-list').append('<li>' + topping + '</li>');
+      });
+    });
 
     $('#total-cost').text(newPizza.price);
     $('#customize-pizza-form').trigger('reset');
