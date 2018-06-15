@@ -29,16 +29,16 @@ $(document).ready(function(){
     delivery = true;
     $('#delivery-address').append('<div class="remove-list">' +
                                    '<div class="form-group">' +
-                                     '<label for="street-address">Street Address</label>' +
-                                     '<input type="text" class="form-control" id="street-address">' +
+                                     '<label for="street-address">Street Address</label><br>' +
+                                     '<input type="text" id="street-address">' +
                                    '</div>' +
                                    '<div class="form-group">' +
-                                     '<label for="city">City</label>' +
-                                     '<input type="text" class="form-control" id="city">' +
+                                     '<label for="city">City</label><br>' +
+                                     '<input type="text" id="city">' +
                                    '</div>' +
                                    '<div class="form-group">' +
-                                     '<label for="zip-code">Zip Code</label>' +
-                                     '<input type="text" class="form-control" id="zip-code">' +
+                                     '<label for="zip-code">Zip Code</label><br>' +
+                                     '<input type="text" id="zip-code">' +
                                    '</div>' +
                                  '</div>');
   });
