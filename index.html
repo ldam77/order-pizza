@@ -17,24 +17,24 @@
         <div class="radio">
           <label for="pizza-size">
             <input type="radio" name="pizza-size" value="small">
-            Small (8")
+            Small (8") - $12
           </label>
         </div>
         <div class="radio">
           <label for="pizza-size">
             <input type="radio" name="pizza-size" value="medium">
-            Medium (12")
+            Medium (12") - $16
           </label>
         </div>
         <div class="radio">
           <label for="pizza-size">
             <input type="radio" name="pizza-size" value="large">
-            Large (16")
+            Large (16") - $20
           </label>
         </div>
 
         <div class="form-group">
-          <h3>Choose your toppings:</h3>
+          <h3>Choose your toppings ($1 per topping):</h3>
           <input type="checkbox" name="toppings" value="cheese"> Cheese<br>
           <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni<br>
           <input type="checkbox" name="toppings" value="sausage"> Sausage<br>
@@ -46,8 +46,13 @@
           <input type="checkbox" name="toppings" value="anchovies"> Anchovies<br>
         </div>
 
+        <button type="submit" class="btn btn-danger">Order Pizza</button>
       </form>
 
+      <div class="total-area">
+        <h3>Your Total: $<span id="total-cost"></span></h3>
+
+      </div>
     </div>
 
   </body>
