@@ -1,5 +1,8 @@
 // business logic
-function Pizza(size, toppings){
+function Pizza(name, phone, address, size, toppings){
+  this.name = name;
+  this.phone = phone;
+  this.address = address;
   this.size = size;
   this.toppings = toppings;
   this.price = 0;
@@ -18,10 +21,12 @@ debugger;
 };
 
 var totalCost = 0;
+var delivery = false;
 
 // user interface logic
 $(document).ready(function(){
   $('#add-address').click(function(){
+    delivery = true;
     $('#delivery-address').append('<div class="remove-list">' +
                                    '<div class="form-group">' +
                                      '<label for="street-address">Street Address</label>' +
@@ -30,10 +35,6 @@ $(document).ready(function(){
                                    '<div class="form-group">' +
                                      '<label for="city">City</label>' +
                                      '<input type="text" class="form-control" id="city">' +
-                                   '</div>' +
-                                   '<div class="form-group">' +
-                                     '<label for="state">State</label>' +
-                                     '<input type="text" class="form-control" id="state">' +
                                    '</div>' +
                                    '<div class="form-group">' +
                                      '<label for="zip-code">Zip Code</label>' +
@@ -45,12 +46,22 @@ $(document).ready(function(){
   $('#customize-pizza-form').submit(function(event){
     event.preventDefault();
     var size = $('input:radio[name=pizza-size]:checked').val();
+    var customerName = $('#customer-name').val();
+    var customerPhone = $('#customer-phone').val();
+    var address = "";
+    if(delivery){
+      var streetAddress = $('#street-address').val();
+      var city = $('#city').val();
+      var zipCode = $('#zip-code').val();
+      address = address.concat(streetAddress + ', ' + city + ', ' + zipCode);
+    };
+
     var toppings = [];
     $('input:checkbox[name=toppings]:checked').each(function(){
         toppings.push($(this).val());
     });
 
-    var newPizza = new Pizza(size, toppings);
+    var newPizza = new Pizza(customerName, customerPhone, address, size, toppings);
     newPizza.calculateCost();
     totalCost += newPizza.price;
 
@@ -63,9 +74,13 @@ $(document).ready(function(){
       });
     });
 
+    $('#name').text(newPizza.name);
+    $('#phone').text(newPizza.phone);
+    $('#address').text(newPizza.address);
     $('#total-cost').text(totalCost);
-    $('#customize-pizza-form').trigger('reset');
+    $('.total-area').show();
     $('.order-list-area').show();
+    $('.customer-info').hide();
     $('div.remove-list').remove();
   });
 

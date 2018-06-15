@@ -47,6 +47,16 @@
           <input type="checkbox" name="toppings" value="anchovies"> Anchovies<br>
         </div>
 
+        <div class="customer-info">
+          <div class="form-group">
+            <label for="customer-name">Customer's Name</label>
+            <input type="text" class="form-control" id="customer-name">
+          </div>
+          <div class="form-group">
+            <label for="customer-phone">Customer's Phone Number</label>
+            <input type="text" class="form-control" id="customer-phone">
+          </div>
+        </div>
         <div id="delivery-address">
 
         </div>
@@ -55,6 +65,9 @@
       </form>
 
       <div class="total-area">
+        <h3>Customer:</h3>
+        <span id="name"></span>, <span id="phone"></span><br>
+        <span id="address"></span>
         <h3>Your Total: $<span id="total-cost"></span></h3>
       </div>
 
